@@ -31,12 +31,22 @@ public final class PlayerMenu extends CategoryGridMenu {
 
     @Override
     protected List<Category> categories() {
-        boolean showEmpty = plugin.getConfig().getBoolean("settings.show-empty-categories", true);
+        boolean showEmpty = plugin.getConfig().getBoolean("settings.show-empty-categories", false);
         List<Category> out = new ArrayList<>();
         for (Category c : plugin.categories().visibleTo(viewer)) {
             if (showEmpty || !available(c).isEmpty()) {
                 out.add(c);
             }
+        }
+        // Automatic groups (Teleport, Economy, ...). Plugin names are never shown to players.
+        if (plugin.getConfig().getBoolean("settings.auto-categories", true)) {
+            java.util.Set<String> taken = new java.util.HashSet<>();
+            for (Category c : out) {
+                for (CommandInfo info : plugin.categories().resolve(c, scan)) {
+                    taken.add(info.name().toLowerCase(java.util.Locale.ROOT));
+                }
+            }
+            out.addAll(plugin.autoCategories().build(viewer, scan, taken));
         }
         return out;
     }

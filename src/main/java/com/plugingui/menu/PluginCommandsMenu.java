@@ -46,7 +46,7 @@ public final class PluginCommandsMenu extends PagedMenu {
             return out;
         }
         for (CommandInfo c : entry.commands()) {
-            out.add(new Entry(CommandActions.icon(plugin, viewer, c),
+            out.add(new Entry(CommandActions.icon(plugin, viewer, c, false),
                     e -> CommandActions.click(plugin, viewer, c, e.getClick())));
         }
         return out;

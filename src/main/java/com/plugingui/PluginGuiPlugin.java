@@ -6,6 +6,7 @@ import com.plugingui.config.Settings;
 import com.plugingui.icon.IconFactory;
 import com.plugingui.menu.Menu;
 import com.plugingui.menu.MenuListener;
+import com.plugingui.service.AutoCategories;
 import com.plugingui.service.CategoryManager;
 import com.plugingui.service.ChatInput;
 import com.plugingui.service.CommandScanner;
@@ -23,6 +24,7 @@ public final class PluginGuiPlugin extends JavaPlugin {
     private CommandScanner scanner;
     private CategoryManager categories;
     private ChatInput chat;
+    private AutoCategories autoCategories;
 
     @Override
     public void onEnable() {
@@ -31,6 +33,7 @@ public final class PluginGuiPlugin extends JavaPlugin {
         scanner = new CommandScanner(this);
         categories = new CategoryManager(this);
         chat = new ChatInput(this);
+        autoCategories = new AutoCategories(this);
 
         settings.load();
         categories.load();
@@ -93,6 +96,10 @@ public final class PluginGuiPlugin extends JavaPlugin {
 
     public CategoryManager categories() {
         return categories;
+    }
+
+    public AutoCategories autoCategories() {
+        return autoCategories;
     }
 
     public ChatInput chat() {

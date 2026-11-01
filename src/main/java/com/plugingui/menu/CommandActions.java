@@ -17,7 +17,7 @@ final class CommandActions {
     private CommandActions() {
     }
 
-    static ItemStack icon(PluginGuiPlugin plugin, Player viewer, CommandInfo c) {
+    static ItemStack icon(PluginGuiPlugin plugin, Player viewer, CommandInfo c, boolean playerView) {
         boolean access = c.canUse(viewer);
         Map<String, String> ph = Text.ph(
                 "command", c.name(),
@@ -28,7 +28,7 @@ final class CommandActions {
                 "plugin", c.plugin(),
                 "access", access ? "Yes" : "No",
                 "access_color", access ? "green" : "red");
-        return plugin.settings().menu("commands").item("command", ph);
+        return plugin.settings().menu("commands").item(playerView ? "command-player" : "command", ph);
     }
 
     /** Left-click runs commands that need no arguments; everything else is placed in the chat box. */

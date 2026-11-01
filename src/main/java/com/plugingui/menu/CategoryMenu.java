@@ -42,7 +42,7 @@ public final class CategoryMenu extends PagedMenu {
     protected List<Entry> entries() {
         List<Entry> out = new ArrayList<>();
         for (CommandInfo c : PlayerMenu.visibleCommands(plugin, viewer, category, plugin.scanner().scan())) {
-            out.add(new Entry(CommandActions.icon(plugin, viewer, c),
+            out.add(new Entry(CommandActions.icon(plugin, viewer, c, true),
                     e -> CommandActions.click(plugin, viewer, c, e.getClick())));
         }
         return out;

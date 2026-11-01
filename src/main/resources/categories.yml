@@ -1,53 +1,15 @@
 # Player command categories (shown in /pcoms and edited in /pgui edit).
-# commands: "/name"      a single command (by name or alias)
-#           "plugin:Name" every command of that plugin
-# Commands that don't exist on your server are skipped automatically.
-categories:
-  building:
-    name: "<green>Building"
-    icon: GRASS_BLOCK
-    slot: 22
-    permission: ""
-    description:
-      - "<gray>Building and world tools."
-    commands: ["/wand", "/pos1", "/pos2", "/undo", "/redo", "/schem"]
-  storage:
-    name: "<gold>Storage & Kits"
-    icon: CHEST
-    slot: 29
-    permission: ""
-    description:
-      - "<gray>Kits, chests and item storage."
-    commands: ["/kit", "/kits", "/ec", "/enderchest"]
-  pvp:
-    name: "<red>PvP"
-    icon: DIAMOND_SWORD
-    slot: 30
-    permission: ""
-    description:
-      - "<gray>Combat, duels and arenas."
-    commands: ["/duel", "/pvp", "/arena", "/spawn"]
-  economy:
-    name: "<#2ecc71>Economy"
-    icon: EMERALD
-    slot: 31
-    permission: ""
-    description:
-      - "<gray>Money, shops and trading."
-    commands: ["/bal", "/balance", "/pay", "/shop", "/sell", "/baltop"]
-  guides:
-    name: "<light_purple>Guides"
-    icon: ENCHANTED_BOOK
-    slot: 32
-    permission: ""
-    description:
-      - "<gray>Help, rules and tutorials."
-    commands: ["/help", "/rules", "/guide", "/tutorial"]
-  info:
-    name: "<yellow>Info"
-    icon: OAK_SIGN
-    slot: 33
-    permission: ""
-    description:
-      - "<gray>Server information and links."
-    commands: ["/list", "/seed", "/me", "/discord", "/vote", "/website"]
+# This list is empty on purpose: create your own in-game with /pgui edit (click an empty slot).
+#
+# Example of one category:
+#
+# categories:
+#   my-category:
+#     name: "<green>My Category"
+#     icon: DIAMOND
+#     slot: 22
+#     permission: ""
+#     description:
+#       - "<gray>Some text."
+#     commands: ["/home", "plugin:Essentials"]   # "/name" or "plugin:Name" for a whole plugin
+categories: {}

@@ -8,8 +8,12 @@ settings:
   run-commands-on-click: true
   # Player menu (/pcoms): hide commands the player has no permission for.
   hide-no-permission-commands: true
+  # Player menu: automatically sort every command the player can use into general groups
+  # (Teleport, Economy, Chat, ...). Plugin names are never shown to players.
+  # Rules are in auto-category-rules below.
+  auto-categories: true
   # Player menu: show categories even when the player can use none of their commands.
-  show-empty-categories: true
+  show-empty-categories: false
   # Admin menu: hide plugins that register no commands.
   hide-empty-plugins: false
   # Admin menu: add a "Minecraft" entry holding the built-in server commands.
@@ -49,3 +53,60 @@ buttons:
   empty:
     material: PAPER
     name: "<gray>Nothing to show here"
+
+# Rules for the automatic player categories. A command goes to the first rule with a keyword that
+# equals its name/alias (or is contained in it, for keywords of 4+ letters). Commands that match
+# nothing by name are checked against their description. Anything left goes to auto-category-other.
+# Edit, add or remove rules freely. Icons accept materials, nexo:id and itemsadder:ns:id.
+auto-category-rules:
+  - id: teleport
+    name: "<aqua>Teleport"
+    icon: ENDER_PEARL
+    description: ["<gray>Travel, homes, warps and spawn."]
+    keywords: [tp, tpa, tpaccept, tpdeny, tpahere, teleport, home, homes, sethome, delhome, spawn, warp, warps, setwarp, back, rtp, wild, randomtp, hub, lobby]
+  - id: economy
+    name: "<#2ecc71>Economy"
+    icon: EMERALD
+    description: ["<gray>Money, shops and trading."]
+    keywords: [bal, balance, baltop, pay, money, eco, economy, shop, sell, buy, price, worth, bank, auction, ah, trade, market, withdraw, deposit]
+  - id: chat
+    name: "<light_purple>Chat & Social"
+    icon: WRITABLE_BOOK
+    description: ["<gray>Messages, friends and chat tools."]
+    keywords: [msg, tell, whisper, w, reply, r, mail, chat, ignore, unignore, nick, nickname, friend, friends, party, me, say, socialspy, emoji, mute]
+  - id: land
+    name: "<gold>Land & Protection"
+    icon: GOLDEN_SHOVEL
+    description: ["<gray>Claims, plots and protection."]
+    keywords: [claim, abandonclaim, trust, untrust, trustlist, region, protect, lock, unlock, plot, plots, residence, res, town, nation, clan, guild]
+  - id: kits
+    name: "<yellow>Kits & Items"
+    icon: CHEST
+    description: ["<gray>Kits, storage and item tools."]
+    keywords: [kit, kits, enderchest, ec, backpack, bp, vault, pv, craft, workbench, anvil, grindstone, smithing, loom, cartography, stonecutter, hat, repair, rename, item, itemname, itemlore]
+  - id: pvp
+    name: "<red>PvP & Games"
+    icon: DIAMOND_SWORD
+    description: ["<gray>Combat, duels, arenas and minigames."]
+    keywords: [pvp, duel, duels, arena, fight, kit-pvp, ffa, minigame, game, games, spectate, bounty, stats, leaderboard, top, rank, ranks, quest, quests, battlepass]
+  - id: building
+    name: "<green>Building"
+    icon: GRASS_BLOCK
+    description: ["<gray>World and building tools."]
+    keywords: [wand, pos1, pos2, undo, redo, schem, schematic, brush, copy, paste, fly, speed, time, weather, ptime, pweather, gamemode, gm]
+  - id: info
+    name: "<yellow>Info & Help"
+    icon: OAK_SIGN
+    description: ["<gray>Help, rules and server information."]
+    keywords: [help, rules, guide, tutorial, info, list, who, online, seed, ping, discord, vote, website, store, motd, news, faq, links, staff, ?]
+  - id: settings
+    name: "<white>Settings"
+    icon: COMPARATOR
+    description: ["<gray>Personal options and toggles."]
+    keywords: [toggle, settings, setting, options, option, language, lang, sound, sounds, scoreboard, sidebar, particles, trail, trails, cosmetic, cosmetics, tag, tags, title, titles]
+
+# Where commands go when no rule above matches them.
+auto-category-other:
+  name: "<gray>Other"
+  icon: NETHER_STAR
+  description: ["<gray>Everything else you can use."]

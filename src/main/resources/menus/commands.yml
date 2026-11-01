@@ -20,3 +20,15 @@ items:
       - ""
       - "<yellow>Left-click <gray>to run"
       - "<yellow>Right-click <gray>to type it in chat"
+  # Used in the player menu (/pcoms): no permission lines.
+  command-player:
+    material: COMMAND_BLOCK
+    name: "<#3aa0ff><bold>/{command}"
+    lore:
+      - "<gray>{description}"
+      - ""
+      - "<gray>Usage: <white>{usage}"
+      - "<gray>Aliases: <white>{aliases}"
+      - ""
+      - "<yellow>Left-click <gray>to run"
+      - "<yellow>Right-click <gray>to type it in chat"
