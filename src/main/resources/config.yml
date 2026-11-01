@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------
+#  PluginGui - config.yml
+#  Edit, then run /pgui reload
+# ---------------------------------------------------------------
+settings:
+  # Left-click a command in a menu to run it (only if it needs no arguments).
+  # Commands that need arguments, and right-clicks, put the command in the player's chat box instead.
+  run-commands-on-click: true
+  # Player menu (/pcoms): hide commands the player has no permission for.
+  hide-no-permission-commands: true
+  # Player menu: show categories even when the player can use none of their commands.
+  show-empty-categories: true
+  # Admin menu: hide plugins that register no commands.
+  hide-empty-plugins: false
+  # Admin menu: add a "Minecraft" entry holding the built-in server commands.
+  include-server-commands: true
+  # Categories: show command names that no installed plugin registers.
+  show-unregistered-commands: false
+  # Seconds before a chat prompt (rename, search, ...) times out.
+  prompt-timeout-seconds: 60
+  # Sound key played on every menu click. Leave empty to disable.
+  click-sound: "ui.button.click"
+
+# Custom items / custom menu support.
+# Icons in categories.yml and menus/*.yml accept:
+#   DIAMOND_SWORD                      a vanilla material
+#   nexo:item_id                       a Nexo item
+#   itemsadder:namespace:item_id       an ItemsAdder item
+# Any icon section also accepts:  custom-model-data: 1001   and   item-model: "namespace:key"
+# For resource-pack menu backgrounds, put the pack's glyph character in the menu "title" (menus/*.yml).
+hooks:
+  nexo: true
+  itemsadder: true
+
+# Buttons shared by every menu.
+buttons:
+  close:
+    material: BARRIER
+    name: "<red><bold>Close"
+  back:
+    material: ARROW
+    name: "<yellow>Back"
+  previous:
+    material: ARROW
+    name: "<yellow>Previous page <gray>({page}/{pages})"
+  next:
+    material: ARROW
+    name: "<yellow>Next page <gray>({page}/{pages})"
+  empty:
+    material: PAPER
+    name: "<gray>Nothing to show here"

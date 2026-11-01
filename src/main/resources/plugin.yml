@@ -1,0 +1,27 @@
+name: PluginGui
+version: '${version}'
+main: com.plugingui.PluginGuiPlugin
+api-version: '26.1'
+description: A GUI/menu that lists every installed plugin and its commands for easy access.
+authors: [PluginGui]
+softdepend: [Nexo, ItemsAdder]
+
+commands:
+  plugingui:
+    description: Open the admin Plugin GUI (all plugins and their commands).
+    usage: /<command> [reload|edit|plugin <name>|search <text>|help]
+    aliases: [pgui]
+    permission: plugingui.admin
+  playercommands:
+    description: Open the player command menu.
+    usage: /<command> [category]
+    aliases: [pcoms]
+    permission: plugingui.player
+
+permissions:
+  plugingui.admin:
+    description: Use /plugingui, edit categories and reload the plugin.
+    default: op
+  plugingui.player:
+    description: Use /playercommands.
+    default: true

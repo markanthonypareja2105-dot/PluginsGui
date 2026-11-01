@@ -1,0 +1,76 @@
+# Category editor: /pgui edit  ("Edit Gui") and the "Edits Menu" for one category.
+title: "<#3aa0ff>Edit Gui"
+title-moving: "<#ffaa00>Move category"
+edits-title: "<#3aa0ff>Edits Menu"
+picker-title: "<#3aa0ff>Commands: {category}"
+rows: 6
+border:
+  material: GRAY_STAINED_GLASS_PANE
+  name: " "
+filler:
+  material: LIGHT_GRAY_STAINED_GLASS_PANE
+  name: " "
+items:
+  category:
+    lore:
+      - ""
+      - "<gray>Commands: <white>{count}"
+      - "<yellow>Click <gray>to edit"
+  empty:
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    name: "<gray>Empty slot"
+    lore:
+      - "<yellow>Click <gray>to create a category here"
+  rename:
+    material: NAME_TAG
+    name: "<yellow><bold>Rename"
+    lore:
+      - "<gray>Current: <white>{name}"
+  description:
+    material: OAK_SIGN
+    name: "<yellow><bold>Description"
+    lore:
+      - "<gray>Current: <white>{description}"
+  icon:
+    material: ANVIL
+    name: "<yellow><bold>Icon"
+    lore:
+      - "<gray>Current: <white>{icon}"
+      - "<gray>Material, nexo:id or itemsadder:ns:id"
+  commands:
+    material: COMMAND_BLOCK
+    name: "<yellow><bold>Commands"
+    lore:
+      - "<gray>Entries: <white>{count}"
+      - "<gray>Choose which commands this category shows."
+  move:
+    material: CHEST
+    name: "<yellow><bold>Move"
+    lore:
+      - "<gray>Current slot: <white>{slot}"
+  delete:
+    material: TNT
+    name: "<red><bold>Delete category"
+    lore:
+      - "<gray>Click twice to delete."
+  delete-confirm:
+    material: TNT
+    name: "<dark_red><bold>Click again to confirm"
+    glow: true
+  picker-plugin:
+    material: BOOK
+    name: "<#c77dff><bold>{plugin}"
+    lore:
+      - "<gray>Commands: <white>{count}"
+      - "<gray>Whole plugin added: <white>{included}"
+      - ""
+      - "<yellow>Click <gray>to pick single commands"
+      - "<yellow>Shift-click <gray>to add/remove the whole plugin"
+  picker-command:
+    material: COMMAND_BLOCK
+    name: "<#3aa0ff><bold>/{command}"
+    lore:
+      - "<gray>{description}"
+      - "<gray>In this category: <white>{included}"
+      - ""
+      - "<yellow>Click <gray>to add/remove"

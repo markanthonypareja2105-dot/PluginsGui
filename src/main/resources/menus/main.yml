@@ -1,0 +1,34 @@
+# Admin menu: /plugingui  ("Plugins Gui" - one book per installed plugin)
+title: "<#4a6cf7>Plugins Gui"
+border:
+  material: GRAY_STAINED_GLASS_PANE
+  name: " "
+filler:
+  material: LIGHT_GRAY_STAINED_GLASS_PANE
+  name: " "
+items:
+  plugin:
+    material: ENCHANTED_BOOK
+    name: "<#c77dff><bold>{plugin}"
+    lore:
+      - "<gray>Version: <white>{version}"
+      - "<gray>Author(s): <white>{authors}"
+      - "<gray>Status: <{status_color}>{status}"
+      - "<gray>Commands: <white>{count}"
+      - ""
+      - "<gray>{description}"
+      - ""
+      - "<yellow>Click <gray>to view its commands"
+  edit:
+    material: WRITABLE_BOOK
+    name: "<#c77dff><bold>Edit Gui"
+    lore:
+      - "<gray>Edit the player command categories."
+  search:
+    material: COMPASS
+    name: "<aqua><bold>Search"
+    lore:
+      - "<gray>Filter: <white>{filter}"
+      - ""
+      - "<yellow>Left-click <gray>to search"
+      - "<yellow>Right-click <gray>to clear"

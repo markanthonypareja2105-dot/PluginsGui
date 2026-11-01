@@ -1,0 +1,21 @@
+# Player menu: /playercommands  ("'Player name' Commands" - category icons)
+title: "<#3aa0ff>'{player}' Commands"
+rows: 6
+border:
+  material: GRAY_STAINED_GLASS_PANE
+  name: " "
+filler:
+  material: LIGHT_GRAY_STAINED_GLASS_PANE
+  name: " "
+items:
+  # Name and description of each category icon come from categories.yml; this is the footer.
+  category:
+    lore:
+      - ""
+      - "<gray>{count} command(s) available"
+      - "<yellow>Click <gray>to open"
+  help:
+    material: WRITABLE_BOOK
+    name: "<#c77dff><bold>Help"
+    lore:
+      - "<gray>How to use this menu."

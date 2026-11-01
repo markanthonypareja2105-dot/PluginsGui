@@ -1,0 +1,22 @@
+# Command list of one plugin / one category ("Plugin Name" - one command block per command)
+title: "<#3aa0ff>{plugin}"
+border:
+  material: GRAY_STAINED_GLASS_PANE
+  name: " "
+filler:
+  material: LIGHT_GRAY_STAINED_GLASS_PANE
+  name: " "
+items:
+  command:
+    material: COMMAND_BLOCK
+    name: "<#3aa0ff><bold>/{command}"
+    lore:
+      - "<gray>{description}"
+      - ""
+      - "<gray>Usage: <white>{usage}"
+      - "<gray>Aliases: <white>{aliases}"
+      - "<gray>Permission: <white>{permission}"
+      - "<gray>You can use it: <{access_color}>{access}"
+      - ""
+      - "<yellow>Left-click <gray>to run"
+      - "<yellow>Right-click <gray>to type it in chat"
